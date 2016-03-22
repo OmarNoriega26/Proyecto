@@ -54,8 +54,8 @@ NodoInt* listaInt_ingresarEn(NodoInt *inicio,int c, int v, unsigned int indice){
 			i++;
 		}
 		NodoInt *nuevoNodo = malloc(sizeof(NodoInt));
-		nodoActual->canti = c;
-		nodoActual->valor = v;
+		nuevoNodo->canti = c;
+		nuevoNodo->valor = v;
 		nuevoNodo->sig = nodoActual;
 		anterior->sig = nuevoNodo;
 	}
