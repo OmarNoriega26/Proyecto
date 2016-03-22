@@ -1,4 +1,4 @@
-#include "ListaLigInt.h"
+#include "lista.h"
 
 /*Estructura nodoInt
 	Guarda un nodo para una lista ligada de enteros.
@@ -7,7 +7,7 @@
 */
 
 
-/*Funci髇 listaInt_ingresar
+/*Funci贸n listaInt_ingresar
 	Agrega un valor al final de la lista.
 */
 NodoInt* listaInt_ingresar(NodoInt *inicio, int c, int v){
@@ -33,8 +33,8 @@ NodoInt* listaInt_ingresar(NodoInt *inicio, int c, int v){
 }
 
 
-/*Funci髇 listaInt_ingresarEn
-	Agrega un valor en una posici髇 en especifico de la lista.
+/*Funci贸n listaInt_ingresarEn
+	Agrega un valor en una posici贸n en especifico de la lista.
 */
 NodoInt* listaInt_ingresarEn(NodoInt *inicio,int c, int v, unsigned int indice){
 	NodoInt *nodoActual = inicio;
@@ -62,8 +62,8 @@ NodoInt* listaInt_ingresarEn(NodoInt *inicio,int c, int v, unsigned int indice){
 	return inicio;
 }
 
-/*Funci髇 listaInt_obtener
-	Obtiene un valor en una posici髇 en especifico de la lista.
+/*Funci贸n listaInt_obtener
+	Obtiene un valor en una posici贸n en especifico de la lista.
 */
 int listaInt_obtener(NodoInt *inicio, unsigned int indice){
 	NodoInt *nodoActual = inicio;
@@ -78,21 +78,21 @@ int listaInt_obtener(NodoInt *inicio, unsigned int indice){
 	return nodoActual->valor;
 }
 
-/*Funci髇 listaInt_imprimir
+/*Funci贸n listaInt_imprimir
 	Imprime en pantalla todos los datos de la lista
 */
 void listaInt_imprimir(NodoInt *inicio){
 	NodoInt *nodoActual = inicio;
 	int i =0;
 	while(nodoActual != NULL){
-		printf("Producto: %d 	Valor: %d  	Cantidad %d\n",i++,nodoActual->valor,nodoActual->canti);
+		printf("Producto: %d 	Cantidad: %d  	valor: %d\n",++i,nodoActual->canti,nodoActual->valor);
 		nodoActual = nodoActual->sig;
 	}
 	printf("---------------\n");
 }
 
-/*Funci髇 listaInt_remover
-	Remueve un valor en una posici髇 en especifico de la lista.
+/*Funci贸n listaInt_remover
+	Remueve un valor en una posici贸n en especifico de la lista.
 */
 NodoInt* listaInt_remover(NodoInt *inicio, unsigned int indice){
 	NodoInt *nodoActual = inicio;
@@ -121,7 +121,7 @@ NodoInt* listaInt_remover(NodoInt *inicio, unsigned int indice){
 	return inicio;
 }
 
-/*Funci髇 listaInt_borrar
+/*Funci贸n listaInt_borrar
 	Libera la memoria de toda la lista
 */
 NodoInt* listaInt_borrar(NodoInt *inicio){
