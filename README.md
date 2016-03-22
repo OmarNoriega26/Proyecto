@@ -1,2 +1,2 @@
 # Proyecto
-Tienda departamental
+Tienda departamental.
