@@ -6,16 +6,16 @@
 		sig   - Apuntador al siguiente nodo de la lista
 */
 
-
 /*Función listaInt_ingresar
 	Agrega un valor al final de la lista.
 */
-NodoInt* listaInt_ingresar(NodoInt *inicio, int c, int v){
+NodoInt* listaInt_ingresar(NodoInt *inicio, int c, int v,char p[15]){
 	NodoInt *nodoActual = inicio;
 	if(inicio==NULL){
 		nodoActual = malloc(sizeof(NodoInt));
 		nodoActual->canti = c;
 		nodoActual->valor = v;
+		strcpy(nodoActual->produ, p);
 		nodoActual->sig = NULL;
 		inicio = nodoActual;
 	}
@@ -26,22 +26,23 @@ NodoInt* listaInt_ingresar(NodoInt *inicio, int c, int v){
 		NodoInt *nuevoNodo = malloc(sizeof(NodoInt));
 		nuevoNodo->canti = c;
 		nuevoNodo->valor = v;
+		strcpy(nuevoNodo->produ,p);
 		nuevoNodo->sig = NULL;
 		nodoActual->sig = nuevoNodo;
 	}
 	return inicio;
 }
 
-
 /*Función listaInt_ingresarEn
 	Agrega un valor en una posición en especifico de la lista.
 */
-NodoInt* listaInt_ingresarEn(NodoInt *inicio,int c, int v, unsigned int indice){
+NodoInt* listaInt_ingresarEn(NodoInt *inicio,int c, int v,char p[15], unsigned int indice){
 	NodoInt *nodoActual = inicio;
 	if(inicio==NULL || indice == 0){
 		nodoActual = malloc(sizeof(NodoInt));
 		nodoActual->canti = c;
 		nodoActual->valor = v;
+		strcpy(nodoActual->produ, p);
 		nodoActual->sig = inicio;
 		inicio = nodoActual;
 	}
@@ -56,6 +57,7 @@ NodoInt* listaInt_ingresarEn(NodoInt *inicio,int c, int v, unsigned int indice){
 		NodoInt *nuevoNodo = malloc(sizeof(NodoInt));
 		nuevoNodo->canti = c;
 		nuevoNodo->valor = v;
+		strcpy(nuevoNodo->produ,p);
 		nuevoNodo->sig = nodoActual;
 		anterior->sig = nuevoNodo;
 	}
@@ -75,7 +77,7 @@ int listaInt_obtener(NodoInt *inicio, unsigned int indice){
 		nodoActual = nodoActual->sig;
 		i++;
 	}
-	return nodoActual->valor;
+	return nodoActual->valor,nodoActual->canti;
 }
 
 /*Función listaInt_imprimir
@@ -85,7 +87,7 @@ void listaInt_imprimir(NodoInt *inicio){
 	NodoInt *nodoActual = inicio;
 	int i =0;
 	while(nodoActual != NULL){
-		printf("Producto: %d 	Cantidad: %d  	valor: %d\n",++i,nodoActual->canti,nodoActual->valor);
+		printf("Producto: %d 	Cantidad: %d  	valor: %d 	producto: %s\n",++i,nodoActual->canti,nodoActual->valor,nodoActual->produ);
 		nodoActual = nodoActual->sig;
 	}
 	printf("---------------\n");
@@ -138,4 +140,3 @@ NodoInt* listaInt_borrar(NodoInt *inicio){
 	free(nodoActual);
 	return NULL;
 }
-
