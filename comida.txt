@@ -1,0 +1,3 @@
+leche 5 15
+pollo 3 65
+pescado 6 12
