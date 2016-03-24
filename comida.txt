@@ -1,3 +1,6 @@
-leche 5 15
-pollo 3 65
-pescado 6 12
+
+leche	5	10
+huevo	10	11
+coca	5	7
+mirinda	4	8
+crema	3	5
