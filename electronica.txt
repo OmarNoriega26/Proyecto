@@ -1,0 +1,3 @@
+
+estereo	5	300
+bocinas	5	120

@@ -1,0 +1,5 @@
+
+yoyo	5	10
+trompo	5	12
+dados	5	6
+peluche	5	12
