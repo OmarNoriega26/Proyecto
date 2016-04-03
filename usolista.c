@@ -24,6 +24,31 @@ NodoInt* leerArchivo(char dep[15],NodoInt *lista ){
 	fclose(f);
 	return lista;
 }
+
+void reporteVentas(char dep[15],char nom[15], int tmp, int total)
+{
+	//int tmp=100;//ESTA VARIABLE TIENE QUE SER LA QUE GUARDA LA CANTIDAD
+	//int total=500;//ESTA VARIABLE TIENE QUE SER LA QUE GUARDA EL TOTAL
+	//char nom[15];//ESTA VARIABLE ES PARA EL NOMBRE DEL PRODUCTO
+	FILE *reporteventas;
+	reporteventas=fopen("PRUEBA.txt","a");//AQUI VA EN VEZ DE PRUEBA.txt EL dep DEL NOMBRE DEL DEPARTAMENTO
+	if(reporteventas==0)
+	{
+		printf("Error no fue posible abrir el archvio");
+	}
+	else
+	{
+		time_t tiempo = time(0);
+        struct tm *tlocal = localtime(&tiempo);
+        char output[128];
+        strftime(output,128,"%d/%m/%y %H:%M:%S",tlocal);
+        fprintf(reporteventas,"%s\t",output);
+        fprintf(reporteventas,"%s\t\t\t%d\t\t\t%d\n",nom,tmp,total);
+        fclose(reporteventas);
+	}
+}
+
+
 void guardarArchivo(char dep[15],int cantidad,int costo,char nuevoP[15]){
 	FILE *f;
 	f=fopen(dep,"at");
@@ -56,7 +81,7 @@ NodoInt* agregar(char dep[15],NodoInt *lista)
 	char nuevoP[15];
 	int costo,cantidad;
 	printf("\nEscriba el nuevo nombre del producto:	");
-	scanf("%s",&nuevoP);
+	scanf("%c",&nuevoP);
 	printf("\nEscriba el costo del producto: ");
 	scanf("%d",&costo);
 	printf("\nEscriba la cantidad inicial del producto: ");
@@ -117,7 +142,7 @@ NodoInt* vender(char dep[15], NodoInt *lista)
 
 	printf("Su venta total es de %d pesos\n",total);
 	printf("quedaran disponibles  %d productos\n",tmp);
-
+	reporteVentas(dep,nom,cuantos,total);
 	if (tmp == 0)
 	{
 		lista=listaInt_remover(lista,venta);

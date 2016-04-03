@@ -1,0 +1,10 @@
+							***LA TIENDITA***
+				AV. INSURGENTES NO 3000 CIUDAD UNIVERSITARIA
+								  MEXICO
+			=================================================
+
+	FECHA			PRODUCTO		CANTIDAD	TOTAL
+
+02/04/16 21:14:02	Omar			100			500
+02/04/16 21:14:06	Omar			100			500
+02/04/16 21:49:19	Omar			100			500
