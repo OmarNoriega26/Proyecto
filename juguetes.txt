@@ -1,7 +1,0 @@
-
-trompo	5	12
-dados	5	6
-peluche	5	12
-muñeca	50	10
-chocolate	5	10
-yoyo	4	10
