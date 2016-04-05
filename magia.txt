@@ -1,0 +1,6 @@
+
+naipes	2	50
+palomas	2	300
+esponja	9	15
+WOW	150	30
+conejos	500	10

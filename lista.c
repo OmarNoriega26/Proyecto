@@ -114,7 +114,7 @@ void listaInt_imprimir(NodoInt *inicio){
 	NodoInt *nodoActual = inicio;
 	int i =0;
 	while(nodoActual != NULL){
-		printf("Producto: %d 	Cantidad: %d  	valor: %d 	producto: %s\n",++i,nodoActual->canti,nodoActual->valor,nodoActual->produ);
+		printf("%d - %s 	Cantidad: %d  	valor: %d 	\n",++i,nodoActual->produ,nodoActual->canti,nodoActual->valor);
 		nodoActual = nodoActual->sig;
 	}
 	printf("---------------\n");

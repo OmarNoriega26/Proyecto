@@ -1,0 +1,3 @@
+
+camisa	7	100
+tines	35	15
