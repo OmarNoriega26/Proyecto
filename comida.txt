@@ -1,6 +1,0 @@
-
-mirinda	4	8
-crema	3	5
-cebolla	5	20
-huevo	9	11
-coca	3	7
