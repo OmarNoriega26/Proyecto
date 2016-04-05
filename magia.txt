@@ -1,4 +1,0 @@
-
-naipes	5	50
-palomas	5	300
-esponja	5	15
