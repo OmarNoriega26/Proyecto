@@ -1,3 +1,0 @@
-
-calceta	5	20
-camisa	5	100
